@@ -8,12 +8,6 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import '../global.css'
 
-// import { withNativeWind } from "native-wind/metro";
-
-// module.exports = withNativeWind(config, {
-//   input: "<relative path to your .css file>",
-// });
-
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
