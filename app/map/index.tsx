@@ -16,7 +16,6 @@ const CAMERA_ZOOM_RANGE = {
     maxCenterCoordinateDistance: 5,
 }
 
-
 const POINTS_OF_INTEREST = [
     {
         title:'The Skyline College Quad',

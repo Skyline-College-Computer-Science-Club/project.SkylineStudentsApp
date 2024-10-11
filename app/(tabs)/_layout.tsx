@@ -52,7 +52,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="map"
         options={{
           title: 'Map',
@@ -60,7 +60,7 @@ export default function TabLayout() {
             <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
           ),
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
