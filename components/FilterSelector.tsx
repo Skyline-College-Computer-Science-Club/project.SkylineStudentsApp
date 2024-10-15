@@ -3,9 +3,12 @@ import { useState } from 'react'
 
 import Feather from '@expo/vector-icons/Feather';
 
+
+
 export default function FilterSelector() {
 
     const [ filterList, setFilterList ] = useState(Array<string>)
+    const [ showList, setShowList ] = useState(false)
 
     function toggleFilter(filter: string) {
         const found = filterList.findIndex((element) => element == filter)
@@ -16,19 +19,19 @@ export default function FilterSelector() {
 
     return (
         <View className='flex flex-row gap-2'>
-            <View className='flex flex-row gap-1 items-center rounded-full bg-neutral-600 px-4 py-1'>
+            <Pressable onPress={() => {setShowList(!showList)}} className='flex flex-row gap-1 items-center rounded-full bg-neutral-600 px-4 py-1'>
                 <Feather name='filter' size={18} color='white' />
-                <Text className='font-bold'>Filter</Text>
-            </View>
-            <View className='flex flex-row gap-2'>
+                <Text className='font-bold text-white'>Filter</Text>
+            </Pressable>
+            <View className={(showList ? '' : 'hidden') + ' flex flex-row gap-2'}>
                 <Pressable onPress={() => {toggleFilter('STEM')}}>
-                    <Text className='font-bold rounded-full bg-lime-600 px-4 py-1'>STEM</Text>
+                    <Text className='font-bold rounded-full text-white bg-lime-600 px-4 py-1'>STEM</Text>
                 </Pressable>
-                <Pressable>
-                    <Text className='font-bold rounded-full bg-amber-600 px-4 py-1'>Hobby</Text>
+                <Pressable onPress={() => {}}>
+                    <Text className='font-bold rounded-full text-white bg-amber-600 px-4 py-1'>Hobby</Text>
                 </Pressable>
-                <Pressable>
-                    <Text className='font-bold rounded-full bg-sky-600 px-4 py-1'>Cultural</Text>
+                <Pressable onPress={() => {}}>
+                    <Text className='font-bold rounded-full text-white bg-sky-600 px-4 py-1'>Cultural</Text>
                 </Pressable>
             </View>
         </View>

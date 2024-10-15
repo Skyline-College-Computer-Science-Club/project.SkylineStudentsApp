@@ -81,7 +81,7 @@ export default function HomeScreen() {
           <Text className='font-bold text-lg text-white'>My Calender</Text>
         </ThemedView>
         <ThemedView darkColor='#385515' lightColor='#689B2AFF' className='flex justify-center items-center gap-1 w-[49%] h-28 p-2 rounded-2xl'>
-          <Link href='../clubs' className='z-10 absolute w-full h-full' /> 
+          <Link href='../clubsListing' className='z-10 absolute w-full h-full' /> 
           <MaterialCommunityIcons name="party-popper" size={32} color="#FFF" />
           <Text className='font-bold text-lg text-white'>Student Clubs</Text>
         </ThemedView>

@@ -1,0 +1,36 @@
+import { ThemedText } from '@/components/ThemedText';
+import ParallaxScrollView from '@/components/ParallaxScrollView';
+
+import { View } from 'react-native'
+
+import { useLocalSearchParams } from 'expo-router';
+import { Image as ExpoImage } from 'expo-image'
+
+import { Clubs } from '@/constants/Clubs';
+
+export default function ClubDetails() {
+    const { clubName } : { clubName: string }= useLocalSearchParams()
+    const clubDetails = Clubs[clubName]
+    // console.log(clubDetails.description)
+
+    return (
+        <ParallaxScrollView
+            headerBackgroundColor={{ light: '#FF5454FF', dark: '#740101FF' }}
+            headerImage={
+                <ExpoImage 
+                    source={clubDetails.backdropImg}
+                    contentFit='cover'
+                    style={{ width: '100%', height: '114%' }}
+                />
+            }
+        >
+            <View className='flex items-center gap-2'>
+                <ExpoImage source={clubDetails.logoImg} style={{ width: 64, height: 64, borderRadius: 9999 }} />
+                <ThemedText type='title' className='text-center pt-1'>{clubName}</ThemedText>
+                <ThemedText>{clubDetails.description}</ThemedText>
+
+                
+            </View>
+        </ParallaxScrollView>
+    )
+}
