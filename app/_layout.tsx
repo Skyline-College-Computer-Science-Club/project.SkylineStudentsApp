@@ -5,8 +5,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
+import { View } from 'react-native';
+
 import { useColorScheme } from '@/hooks/useColorScheme';
 import '../global.css'
+import { ThemedView } from '@/components/ThemedView';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,10 +30,13 @@ export default function RootLayout() {
     return null;
   }
 
+  // , headerBackground: () => <View className='bg-neutral-900/20 w-full h-full' />
+
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack screenOptions={{ headerTransparent: true }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="clubs" options={{ headerShown: false }} /> */}
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

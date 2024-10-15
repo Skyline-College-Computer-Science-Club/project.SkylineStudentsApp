@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import MapView, { PROVIDER_GOOGLE, MAP_TYPES, Marker } from 'react-native-maps';
-import { StyleSheet, View } from 'react-native';
+// import MapView, { PROVIDER_GOOGLE, MAP_TYPES, Marker } from 'react-native-maps';
+import { Text, StyleSheet, View } from 'react-native';
+import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText';
 
 const CAMERA_START = {
     center: {
@@ -51,19 +53,19 @@ const POINTS_OF_INTEREST = [
 ]
 
 export default function Map() {
-    const mapRef = useRef<MapView>();
+    // const mapRef = useRef<MapView>();
 
-    const [currentMargin, setCurrentMargin] = useState(1);
+    // const [ currentMargin, setCurrentMargin ] = useState(1);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setCurrentMargin(0);
-        }, 1000);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setCurrentMargin(0);
+    //     }, 1000);
+    // }, []);
 
     return (
         <View className='flex-1'>
-            <MapView
+            {/* <MapView
                 style={{ marginBottom: currentMargin, ...StyleSheet.absoluteFillObject }}
                 provider={PROVIDER_GOOGLE}
                 mapType={MAP_TYPES.HYBRID}
@@ -81,13 +83,18 @@ export default function Map() {
                 loadingEnabled
 
                 // liteMode
-                ref={mapRef}
+                // ref={mapRef}
+                className='absolute w-full h-full'
             >
                 {POINTS_OF_INTEREST.map((marker, index) => (
                     <Marker title={marker.title} description={marker.description} key={index} coordinate={marker.coordinates}></Marker>
                 ))}
-                
             </MapView>
+            <ThemedView className='absolute bottom-0 w-full h-48 rounded-t-3xl flex-col justify-start items-center p-4'>
+                <ThemedText type='subtitle'>The STEM Center</ThemedText>
+                <Text className='text-white text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+            </ThemedView> */}
         </View>
+
     );
 }
