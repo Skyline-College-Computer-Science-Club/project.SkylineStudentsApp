@@ -25,8 +25,7 @@ export function ThemedText({
   );
 }
 
-
-// consider removing default styling
+// TODO consider removing default styling type
 
 const styles = {
   default: 'text-base leading-6',

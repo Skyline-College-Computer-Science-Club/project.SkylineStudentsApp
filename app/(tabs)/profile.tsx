@@ -12,7 +12,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#FF5454FF', dark: '#740101FF' }}
+      headerBackgroundColor={{ light: '#000', dark: '#000' }}
       headerImage={
         <Image
           source={require('@/assets/images/backdrop.png')}
@@ -26,7 +26,7 @@ export default function HomeScreen() {
       </View>
 
       <ThemedText type='subtitle' className='border-b-[1px] border-neutral-200 pb-2'>⚙️ Your Dashboard</ThemedText>
-      
+
       <View className='flex flex-row flex-wrap justify-between items-center gap-2'>
         <ThemedView darkColor='#00384E' lightColor='#1A7CA3FF' className='flex justify-center items-center gap-1 w-[49%] h-28 p-2 bg-sky-900 rounded-2xl'>
           <MaterialIcons name="notifications" size={32} color="#FFF" />
@@ -36,7 +36,7 @@ export default function HomeScreen() {
           <MaterialCommunityIcons name="account-check" size={32} color="#FFF" />
           <Text className='font-bold text-lg text-white'>Preferences</Text>
         </ThemedView>
-        
+
         <ThemedView darkColor='#7f1d1d' lightColor='#CA4343FF' className='flex justify-center items-center gap-1 w-[49%] h-28 p-2 rounded-2xl'>
           <MaterialCommunityIcons name="information" size={32} color="#FFF" />
           <Text className='font-bold text-lg text-white'>My Details</Text>

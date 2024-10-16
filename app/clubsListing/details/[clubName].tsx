@@ -1,6 +1,7 @@
 import { ThemedText } from '@/components/ThemedText';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 
+import { Stack } from 'expo-router'
 import { View } from 'react-native'
 
 import { useLocalSearchParams } from 'expo-router';
@@ -31,6 +32,13 @@ export default function ClubDetails() {
 
                 
             </View>
+
+            {/* removes unnecessary and redundant title on the top header */}
+            <Stack.Screen
+                options={{
+                    title: '',
+                }}
+            />
         </ParallaxScrollView>
     )
 }
